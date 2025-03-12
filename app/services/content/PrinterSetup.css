@@ -15,9 +15,10 @@ div {
     color: #fff;
     display: flex;
     align-items: center;
-    height: 564.47px;
+    height: 400px;
     overflow: hidden;
     flex-direction: column;
+    margin-top: 30px;
 }
 
 .text-content {

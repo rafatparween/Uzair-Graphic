@@ -7,7 +7,7 @@ const Helppage = () => {
       <div className="flex max-w-6xl ml-[-491px] ">
         
         {/* Left Side - Text Section */}
-        <div className="flex flex-col w-1/2 p-8 mt-[35px] mr-[241px] xl:ml-[131px]">
+        <div className="flex flex-col w-1/2 p-8 mt-[35px] mr-[241px] xl:ml-[151px]">
           <h1 className="text-4xl font-bold mb-4 h-[30px] text-gray-500">You're Not Alone,</h1>
           <h1 className='text-[50px] text-[#1C8DCE] w-[509px] mt-[10px]'>We're Here To Help</h1>
           <p className="text-[20px] mb-4 text-black w-[700px] h-[48px] mt-[20px]">
@@ -54,7 +54,6 @@ const Helppage = () => {
 };
 
 export default Helppage;
-
 
 
 

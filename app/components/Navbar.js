@@ -1,83 +1,131 @@
-"use client";
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faPercent, faLifeRing, faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
+
+
+
+// import Link from 'next/link';
+// import React, { useState } from 'react';
+// import Image from 'next/image';
+
+// const Chatlink = () => {
+//   const [hover, setHover] = useState(false);
+
+//   return (
+//     <div
+//       className="chat-now text-2xl text-[#1c85c1] cursor-pointer relative inline-block"
+//       onMouseEnter={() => setHover(true)}
+//       onMouseLeave={() => setHover(false)}
+//     >
+//       <i className="fas fa-phone-square-alt mr-2" aria-hidden="true"></i>
+//       <span className="text-[24px]">Chat Now</span>
+//       <div
+//         className={`absolute bottom-[-5px] right-0 h-[4px] bg-[#1c85c1] transition-all duration-300 ease-in-out ${
+//           hover ? 'w-full' : 'w-0'
+//         }`}
+//       ></div>
+//     </div>
+//   );
+// };
+
+// const Navbar = () => {
+//   return (
+//     <nav className="bg-white w-full">
+//       <div className="max-w-[88%] mx-auto flex items-center justify-between py-4">
+//         {/* Logo on the left */}
+//         <Link legacyBehavior href="/" passHref>
+//           <a className="flex items-center">
+//             <Image
+//               src="/hplogo.png"
+//               alt="HP Logo"
+//               width={53}
+//               height={53}
+//               className="w-auto h-auto"
+//             />
+//           </a>
+//         </Link>
+
+//         {/* Chatlink on the right */}
+//         <Chatlink />
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+
 import Link from 'next/link';
-import Image from "next/image";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { Menu, X } from 'lucide-react'; // Icons for mobile menu
 
-const NavBar = () => {
+const Chatlink = () => {
+  const [hover, setHover] = useState(false);
+
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 w-full h-20 p-4 shadow-lg bg-white flex items-center justify-between md:h-16 lg:h-20 overflow-hidden ">
-      
-      {/* Logo */}
-      <div className="flex items-center pl-4 md:pl-8">
-      <Link legacyBehavior href="#">
-          <a>
-            <Image
-              className="text-[50px] "
-              src="/uzair.jpg"
-              height={124}
-              width={133}
-              alt="Logo"
-            />
-          </a>
-        </Link>
-        <Link legacyBehavior href="#">
-          <a className="text-[27px] text-[#0C71C3]">Uzair Graphics & Printing</a>
-        </Link>
-      </div>
-      
-      {/* Search Bar */}
-      <div className="flex-grow px-4">
-        <div className="relative max-w-lg mx-auto">
-          <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-            <FontAwesomeIcon className="text-gray-500" icon={faSearch} />
-          </span>
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-[762px] h-10 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none"
-          />
-        </div>
-      </div>
-
-      {/* Navigation Links */}
-      <div className="flex items-center space-x-4 pr-4 md:pr-8">
-        <div className="flex items-center space-x-2">
-          <FontAwesomeIcon className="w-5 h-5" icon={faPercent} />
-          <span className="hidden md:inline-block">
-            <Link legacyBehavior href="./components/projects">
-              <a className="text-black no-underline">My Projects</a>
-            </Link>
-          </span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <FontAwesomeIcon className="w-5 h-5" icon={faLifeRing} />
-          <span className="hidden md:inline-block">
-            <Link legacyBehavior href="./components/help">
-              <a className="text-black no-underline">Help is here</a>
-            </Link>
-          </span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <FontAwesomeIcon className="w-5 h-5" icon={faUser} />
-          <span className="hidden md:inline-block">
-            <Link legacyBehavior href="./components/signup">
-              <a className="text-black no-underline">Sign in</a>
-            </Link>
-          </span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <FontAwesomeIcon className="w-5 h-5" icon={faCartShopping} />
-          <span className="hidden md:inline-block">
-            <Link legacyBehavior href="/carts">
-              <a className="text-black no-underline">Cart</a>
-            </Link>
-          </span>
-        </div>
-      </div>
+    <div
+      className="chat-now text-lg sm:text-2xl text-[#1c85c1] cursor-pointer relative inline-block"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <i className="fas fa-phone-square-alt mr-2" aria-hidden="true"></i>
+      <span className="text-[18px] sm:text-[24px]">Chat Now</span>
+      <div
+        className={`absolute bottom-[-5px] right-0 h-[4px] bg-[#1c85c1] transition-all duration-300 ease-in-out ${
+          hover ? 'w-full' : 'w-0'
+        }`}
+      ></div>
     </div>
   );
 };
 
-export default NavBar;
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <nav className="bg-white w-full">
+      <div className="max-w-[90%] xl:max-w-[1280px] mx-auto flex items-center justify-between py-4">
+        
+        {/* Logo on the left */}
+        <Link href="/" passHref legacyBehavior>
+          <a className="flex items-center">
+            <Image
+              src="/hplogo.png"
+              alt="HP Logo"
+              width={53}
+              height={53}
+              className="w-auto h-auto"
+            />
+          </a>
+        </Link>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="block md:hidden text-gray-700"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={30} /> : <Menu size={30} />}
+        </button>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-6">
+          <Chatlink />
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden flex flex-col items-center gap-4 pb-4">
+          <Chatlink />
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+
+
+

@@ -1,7 +1,11 @@
 {
   "/page": "app/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/disclaimer/page": "app/disclaimer/page.js",
+  "/services/page": "app/services/page.js",
   "/privacyPolicy/page": "app/privacyPolicy/page.js",
-  "/terms&condition/page": "app/terms&condition/page.js"
+  "/about/page": "app/about/page.js",
+  "/disclaimer/page": "app/disclaimer/page.js",
+  "/terms&condition/page": "app/terms&condition/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/policy/page": "app/policy/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

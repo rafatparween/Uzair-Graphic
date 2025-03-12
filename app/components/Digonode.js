@@ -8,15 +8,17 @@
 //     { name: "Color Or Black Ink Not Printing", icon: "https://www.shareicon.net/data/2015/05/04/33421_printer_256x256.png" },
 //     { name: "Scanner", icon: "https://t3.ftcdn.net/jpg/04/81/66/56/360_F_481665663_aij2vpvwMjSS1LltlvcgmjzsOYSuHgbe.jpg" },
 //     { name: "Fax Issues", icon: "https://pngimg.com/d/printer_PNG101582.png" },
-    
 //   ];
 
 //   return (
-//     <div className="bg-[#DDEBEB] h-[600px] flex flex-col items-center py-12 mt-[55px]">
+//     <div className="bg-[#F0F0F0] h-[600px] flex flex-col items-center py-12 ">
 //       <h1 className="text-4xl font-semibold text-gray-800 mb-10">Diagnose & Solve</h1>
 //       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-screen-xl">
 //         {items.map((item, index) => (
-//           <div key={index} className="bg-white shadow-lg p-6 flex flex-col items-center w-[340px] h-[171px] rounded-tr-[80px]">
+//           <div 
+//             key={index} 
+//             className="bg-white shadow-lg p-6 flex flex-col items-center w-[340px] h-[171px] 
+//                        rounded-tr-[80px] transition-all duration-300 ease-in-out hover:rounded-none ">
 //             <img src={item.icon} alt={item.name} width={80} height={80} />
 //             <p className="mt-4 text-center text-lg font-semibold text-[#1C8DCE]">{item.name}</p>
 //           </div>
@@ -25,6 +27,8 @@
 //     </div>
 //   );
 // }
+
+
 
 
 import Image from 'next/image';
@@ -40,14 +44,19 @@ export default function Digonode() {
   ];
 
   return (
-    <div className="bg-[#F0F0F0] h-[600px] flex flex-col items-center py-12 mt-[55px]">
-      <h1 className="text-4xl font-semibold text-gray-800 mb-10">Diagnose & Solve</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-screen-xl">
+    <div className="bg-[#F0F0F0] flex flex-col items-center py-12">
+      {/* Title */}
+      <h1 className="text-4xl font-semibold text-gray-800 mb-10 text-center">Diagnose & Solve</h1>
+
+      {/* Grid Container */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 w-[90%] max-w-screen-xl">
         {items.map((item, index) => (
           <div 
             key={index} 
-            className="bg-white shadow-lg p-6 flex flex-col items-center w-[340px] h-[171px] 
-                       rounded-tr-[80px] transition-all duration-300 ease-in-out hover:rounded-none ">
+            className="bg-white shadow-lg p-6 flex flex-col items-center justify-center 
+                      rounded-tr-[80px] transition-all duration-300 ease-in-out hover:rounded-none 
+                      w-full max-w-[340px] h-[171px] mx-auto"
+          >
             <img src={item.icon} alt={item.name} width={80} height={80} />
             <p className="mt-4 text-center text-lg font-semibold text-[#1C8DCE]">{item.name}</p>
           </div>

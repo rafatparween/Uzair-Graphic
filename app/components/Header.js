@@ -1,100 +1,82 @@
-"use client"
-import { useState, useEffect } from "react";
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+"use client";
+import { useState } from "react";
+import { FiMenu } from "react-icons/fi";
+import Link from "next/link";
 
-function Header() {
-  const [slide, setSlide] = useState(0);
-  const [itemWidth, setItemWidth] = useState(0);
-  const [visibleItems, setVisibleItems] = useState(0);
-
-  const [categories] = useState([
-    { name: "Visiting Cards", image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:good,w_700/India%20LOB/visiting-cards/Velvet%20Touch%20Visiting%20Cards/IN_Velvet-Touch-Visiting-Cards_Overview" },
-    { name: "Personalised Pens", image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:good,w_700/India%20LOB/Pens/Parker%20Lac%20Black%20Ball%20Pens/IN_Parker-Lac-Black-Ball-Pens_Overview" },
-    { name: "Custom T-shirts", image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:good,w_700/India%20LOB/Clothing%20and%20Bags/Dutees%20Combo%20Polo%20T-Shirts/IN_Dutees-Combo-Polo-T-Shirts_Overview" },
-    { name: "Labels, Stickers & Packaging", image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:good,w_700/India%20LOB/label%20and%20sticker/Custom%20Shape%20Stickers/New/IN_Custom-Shape-Stickers_Overview-2" },
-    { name: "Photo Gifts", image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:good,w_700/India%20LOB/Photo%20Gifts/Acrylic%20Photo%20Blocks/IN_Acrylic-Photo-Blocks_Overview" },
-    { name: "Custom Bags", image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:good,w_700/India%20LOB/Clothing%20and%20Bags/Bags-%20Wildcraft%20Laptop%20Bag/IN_Wildcraft-Laptop-Bag_Overview" },
-    { name: "Custom Drinkware", image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:good,w_700/India%20LOB/Drinkware/Frosted%20Beer%20Mugs/IN_Frosted-Beer-Mugs_Overview" },
-    { name: "Custom Stationery", image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:good,w_700/India%20LOB/marketing%20Materials/Wooden-LED-keychain/IN_Wooden-LED-keychain_Overview" },
-    { name: "Custom Stamps & Ink", image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:good,w_700/India%20LOB/Stamps/Professional%20Stamps/IN_Professional-Stamps_Overview" },
-  ]);
-
-  // Calculate the item width and visible items based on the viewport width
-
-  useEffect(() => {
-    const updateItemWidth = () => {
-      const containerWidth = window.innerWidth;
-      const gap = 16; 
-      const calculatedItemWidth = (containerWidth - (gap * (8 - 1))) / 8; // Adjust for the gap between items
-      setItemWidth(calculatedItemWidth);
-      setVisibleItems(Math.floor(containerWidth / calculatedItemWidth));
-    };
-
-    updateItemWidth();
-    window.addEventListener("resize", updateItemWidth);
-
-    return () => window.removeEventListener("resize", updateItemWidth);
-  }, []);
-
-  const nextSlide = () => {
-    if (slide < categories.length - visibleItems) {
-      setSlide(slide + 1);
-    }
-  };
-
-  const prevSlide = () => {
-    if (slide > 0) {
-      setSlide(slide - 1);
-    }
-  };
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full mt-10">
-      <h1 className="text-2xl font-semibold mb-4 text-center h-[38px]">Explore all categories</h1>
-      <div className="relative">
-        {/* Left Arrow */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center z-10"
-          disabled={slide === 0}
-        >
-          <FaArrowLeft />
-        </button>
+    <div className="flex flex-col items-center w-full">
+      {/* Navigation Bar */}
+      <nav className="bg-[#1C8DCEED] text-white w-full">
+        <div className="max-w-[90.33%] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1280px] mx-auto flex justify-between items-center h-16">
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-white text-3xl"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <FiMenu />
+            </button>
 
-        {/* Categories Carousel */}
-        <div className="overflow-hidden w-full">
-          <div
-            className="flex transition-transform ease-out duration-300"
-            style={{ transform: `translateX(-${slide * (itemWidth + 16)}px)` }} // Adjust translation to account for gap
-          >
-            {categories.map((cat, index) => (
-              <div
-                key={index}
-                className="shrink-0 text-center mx-2"
-                style={{ width: itemWidth }}
-              >
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="w-full h-auto rounded-full"
-                />
-                <div className="mt-2">{cat.name}</div>
-              </div>
-            ))}
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex justify-between items-center w-full">
+              {[
+                "Printer Offline",
+                "Printer Setup",
+                "Scanner Setup",
+                "Support Home",
+                "Ink Cartridges Issue",
+                "Diagnostics",
+                "Business Support",
+              ].map((item, index) => (
+                <Link
+                  key={index}
+                  href="/"
+                  className="hover:text-gray-300 text-sm sm:text-base md:text-lg font-medium whitespace-nowrap px-3"
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
+      </nav>
 
-        {/* Right Arrow */}
+      {/* Mobile Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-72 bg-[#1C8DCEED] text-white transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out md:hidden`}
+      >
         <button
-          onClick={nextSlide}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center z-10"
-          disabled={slide === categories.length - visibleItems}
+          className="absolute top-4 right-4 text-3xl"
+          onClick={() => setIsOpen(false)}
         >
-          <FaArrowRight />
+          ✕
         </button>
+        <div className="flex flex-col space-y-6 mt-20 pl-8">
+          {[
+            "Printer Offline",
+            "Printer Setup",
+            "Scanner Setup",
+            "Support Home",
+            "Ink Cartridges Issue",
+            "Diagnostics",
+            "Business Support",
+          ].map((item, index) => (
+            <Link
+              key={index}
+              href="/"
+              className="block text-lg font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              {item}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
-
-export default Header;

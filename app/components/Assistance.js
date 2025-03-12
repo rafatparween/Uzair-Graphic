@@ -102,6 +102,7 @@ function Assistance(){
                         </div>
                     </div>
                 </div>
+                <img src="https://geekautobuzz.com/wp-content/uploads/2024/09/comp-1.png"/>
         </>
     )
 }

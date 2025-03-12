@@ -1,8 +1,8 @@
 "use client"
-import Header from "./components/Header";
+
 import Slider from "./components/Slider";
 import Content from "./components/Content"
-import NavBar from "./components/Navbar";
+
 import Footer from "./components/Footer";
 import Customer from "./components/Customer";
 import Technicians from "./components/Technicians";
@@ -11,6 +11,8 @@ import Avoid from "./components/Avoid";
 import Helppage from "./components/Helppage";
 import Digonode from "./components/Digonode";
 import JivoChat from "./Jivochat";
+import PrintNavbar from "./components/PrintNavbar";
+import HeaderSection from "./components/HeaderSection";
 
 
 
@@ -18,10 +20,10 @@ function Home() {
   return (
     <>
 
-      <NavBar />
+      <PrintNavbar/>
 
       <Slider />
-      <Header />
+      <HeaderSection/>
       <Content />
       {/* <Technicians/>
       <Assistance/>

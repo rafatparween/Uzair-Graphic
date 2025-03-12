@@ -1,3 +1,4 @@
+"use client"
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -9,15 +10,31 @@ export default function Storepage() {
     };
 
     const tips = [
-        { title: "Check and update your Windows version", content: "Update your operating system to the latest Windows software, if available. HP Smart is compatible with Windows 10 version 1809 or higher and Windows 11. To check for updates, select “Start” > “Settings” > “Windows Update”. Select “Check for updates”." },
-        { title: "Disconnect from a VPN", content: "Apps from the Microsoft Store might not install when connected to a VPN. Consider your location and the security of the Wi-Fi network before disconnecting from a VPN." },
-        { title: "Skip Microsoft account creation", content: "If prompted to create or sign in to a Microsoft account, close the window. You will be able to open the app store anyway. A Microsoft account is not required in order to install or use HP Smart. HP Smart is free software for printer set-up and use." },
-        { title: "Check computer time and location settings", content: "If the Microsoft Store won’t open, verify that your time settings are correct. Select “Start” > “Settings” > “Time & language”. Check the “Date & time” and “Region” to make sure they are your current location and time zone." },
-        { title: "Reset the Microsoft Store cache", content: "Press the Windows key + R to open the “Run” dialogue box, type “wsreset.exe” and then select “OK”. A blank window will open for about 10 seconds, then the app store will launch automatically." },
+        { 
+            title: "Check and update your Windows version", 
+            content: "Update your operating system to the latest Windows version, if available. Ensure compatibility with Windows 10 version 1809 or higher or Windows 11. To check for updates, go to 'Start' > 'Settings' > 'Windows Update' and select 'Check for updates'." 
+        },
+        { 
+            title: "Disconnect from a VPN", 
+            content: "Apps from the Microsoft Store might not install while connected to a VPN. Before disconnecting, consider your location and the security of the Wi-Fi network." 
+        },
+        { 
+            title: "Skip Microsoft account creation", 
+            content: "If prompted to create or sign in to a Microsoft account, you can close the window and proceed to open the app store. A Microsoft account is not required to install or use essential printer software." 
+        },
+        { 
+            title: "Check computer time and location settings", 
+            content: "If the Microsoft Store won’t open, ensure your time and location settings are correct. Go to 'Start' > 'Settings' > 'Time & Language' and verify 'Date & Time' and 'Region' match your current location and time zone." 
+        },
+        { 
+            title: "Reset the Microsoft Store cache", 
+            content: "Press the Windows key + R to open the 'Run' dialog box, type 'wsreset.exe', and select 'OK'. A blank window will appear for about 10 seconds, and then the app store will launch automatically." 
+        },
     ];
+    
 
     return (
-        <div className="max-w-4xl mx-auto p-6 mt-[100px] 2xl:ml-[71px] xl:ml-[30px]">
+        <div className="max-w-4xl mx-auto p-6 mt-[-15px] 2xl:ml-[187px] xl:ml-[109px]">
             {/* Store icons aligned to the right */}
             <div className="flex justify-end space-x-2 mb-6">
                 {/* <img src="https://w7.pngwing.com/pngs/867/239/png-transparent-google-play-logo-google-play-android-app-store-play-now-button-text-label-logo.png" alt="Google Play" className="h-[40px] w-[129px] object-contain" /> */}
