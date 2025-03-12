@@ -84,7 +84,7 @@ const FooterSection = () => {
       {/* Lower part with copyright */}
       <div className="border-t border-gray-600 py-4 text-center max-w-[1280px] w-[90%] mx-auto">
         <p className="text-xs text-gray-400">
-          © Copyright, All Rights Reserved by printersolutiononline
+          © Copyright, All Rights Reserved by micro-sonic
         </p>
       </div>
     </footer>
