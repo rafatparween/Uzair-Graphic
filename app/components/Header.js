@@ -5,6 +5,9 @@ import Link from "next/link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+   const handleRedirect = () => {
+    window.open("https://www.printersmartassistant.com/", "_blank");
+  };
 
   return (
     <div className="flex flex-col items-center w-full">
@@ -31,13 +34,12 @@ export default function Header() {
                 "Diagnostics",
                 "Business Support",
               ].map((item, index) => (
-                <Link
+                <button onClick={handleRedirect}
                   key={index}
-                  href="/"
                   className="hover:text-gray-300 text-sm sm:text-base md:text-lg font-medium whitespace-nowrap px-3"
                 >
                   {item}
-                </Link>
+                </button>
               ))}
             </div>
           </div>

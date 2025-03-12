@@ -40,7 +40,7 @@ const FooterSection = () => {
               { label: "About", path: "/about" },
               { label: "Privacy Policy", path: "/privacyPolicy" },
               { label: "Disclaimer", path: "/disclaimer" },
-              { label: "Terms & Conditions", path: "/termsConditions" },
+              { label: "Terms & Conditions", path: "/terms&condition" },
             ].map((link, index) => (
               <li key={index} className="mb-2">
                 <Link legacyBehavior href={link.path}>
