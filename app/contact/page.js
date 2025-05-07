@@ -43,7 +43,7 @@ const Home = () => {
                     <div>
                         <p className="text-lg font-bold">Email</p>
                         <p className="text-sm text-gray-500 mb-4">Customer service specialists respond to emails from Monday – Saturday.</p>
-                        <p className="mb-4">Our email is <a href="mailto:customerservice@hewletthubsolutions.com" className="text-blue-600">customerservice@uzairgraphics&printing</a> or you can email us directly here.</p>
+                        <p className="mb-4">Our email is <a href="mailto:customerservice@uzairgraphicsprinting.com" className="text-blue-600">customerservice@uzairgraphics&printing</a> or you can email us directly here.</p>
                         <button className="bg-black text-white py-2 px-4 rounded-md">Email us</button>
                     </div>
                 </div>

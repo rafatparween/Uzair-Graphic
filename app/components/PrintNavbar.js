@@ -15,7 +15,7 @@ const PrintNavbar = () => {
           <a>
             <Image
               className="text-[50px] "
-              src="/hhslogo.webp"
+              src="/newuzair.jpg"
               height={124}
               width={133}
               alt="Logo"

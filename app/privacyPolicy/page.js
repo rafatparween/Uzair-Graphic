@@ -87,7 +87,7 @@ export default function Privacy() {
             If you have any questions or concerns about this Privacy Policy or how your personal information is handled, please feel free to contact us:
           </p>
           <p className="mt-4">
-            Email: support@uzairgraphics.com <br />
+            Email: support@uzairgraphicsprinting.com <br />
             Phone: 1-800-123-UGP <br />
             Address: Uzair Graphics & Printing, 456 Print Avenue, Print City, USA
           </p>

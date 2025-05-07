@@ -58,7 +58,7 @@ const TermsAndConditions = () => {
 
         <p className="text-center text-gray-600 mt-6">
           If you have any questions, please contact us at
-          <span className="text-blue-600"> info@uzairgraphics.com</span>.
+          <span className="text-blue-600"> info@uzairgraphicsprinting.com</span>.
         </p>
       </div>
     </div>

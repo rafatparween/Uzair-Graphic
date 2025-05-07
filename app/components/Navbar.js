@@ -90,7 +90,7 @@ const Navbar = () => {
         <Link href="/" passHref legacyBehavior>
           <a className="flex items-center">
             <Image
-              src="/hplogo.png"
+              src="/newuzair.jpg"
               alt="HP Logo"
               width={53}
               height={53}
