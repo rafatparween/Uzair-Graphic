@@ -23,7 +23,7 @@ const PrintNavbar = () => {
           </a>
         </Link>
         <Link legacyBehavior href="#">
-          <a className="text-[27px] text-[#0C71C3]">Hewlett Hub Solutions</a>
+          <a className="text-[27px] text-[#0C71C3]">Uzair Graphics & Printing</a>
         </Link>
       </div>
       
