@@ -10,7 +10,6 @@ import Assistance from "./components/Assistance";
 import Avoid from "./components/Avoid";
 import Helppage from "./components/Helppage";
 import Digonode from "./components/Digonode";
-import JivoChat from "./Jivochat";
 import PrintNavbar from "./components/PrintNavbar";
 import HeaderSection from "./components/HeaderSection";
 
@@ -32,7 +31,7 @@ function Home() {
       <Helppage/> */}
       <Customer/>
       <Footer />
-      <JivoChat/>
+   
 
 
     </>
